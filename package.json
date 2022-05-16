@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --open",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@testing-library/react": "^12.1.2",
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
     "eslint": "^8.13.0",
@@ -31,10 +33,13 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "babel-jest": "^28.1.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "file-loader": "^6.2.0",
     "framer-motion": "^6.3.3",
+    "jest": "^28.1.0",
     "prettier": "^2.6.2",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
