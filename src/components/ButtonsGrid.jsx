@@ -7,7 +7,7 @@ function ButtonsGrid({
 }) {
   return (
     <div className="btnsDiv">
-      <div onClick={clear} onKeyPress role="button" tabIndex="0"> AC </div>
+      <div onClick={clear} data-testid="div-test-id" onKeyPress role="button" tabIndex="0"> AC </div>
       <div onClick={setPMstate} onKeyPress role="button" tabIndex="0"> +/- </div>
       <div onClick={() => { setOp('%'); }} onKeyPress role="button" tabIndex="0"> % </div>
       <div onClick={() => { setOp('÷'); }} onKeyPress role="button" tabIndex="0"> ÷ </div>

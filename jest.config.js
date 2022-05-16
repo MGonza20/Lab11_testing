@@ -4,10 +4,8 @@
  */
 
 module.exports = {
-
+  testEnviroment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
-
   collectCoverage: true,
-
   coverageDirectory: 'coverage',
 };
