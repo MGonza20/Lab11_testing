@@ -90,13 +90,14 @@ function Shell() {
   };
 
   return (
-    <motion.div className="shell"
-    animate={{
-      y: -100,
-      transition: {
-        duration: 1.6,
-      },
-    }}
+    <motion.div
+      className="shell"
+      animate={{
+        y: -100,
+        transition: {
+          duration: 1.6,
+        },
+      }}
     >
       <Display
         showPrev={prevNum}
