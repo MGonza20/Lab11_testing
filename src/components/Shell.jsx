@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Display from './Display';
@@ -62,6 +63,8 @@ function Shell() {
       setBandera(true);
     }
     setOperator(inputOp);
+    console.log(inputOp);
+    console.log('operador actualizado');
   };
 
   const ac = () => {
