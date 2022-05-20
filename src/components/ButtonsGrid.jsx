@@ -9,9 +9,9 @@ function ButtonsGrid({
   return (
     <div className="btnsDiv">
       <button type="button" onClick={clear} data-testid="div-test-id" tabIndex="0"> AC </button>
-      <button type="button" onClick={setPMstate} tabIndex="0"> +/- </button>
+      <button type="button" data-testid="btnChangeNum" onClick={setPMstate} tabIndex="0"> +/- </button>
       <button onClick={() => { setOp('%'); }} data-testid="btnMod" type="button" tabIndex="0"> % </button>
-      <button onClick={() => { setOp('÷'); }} type="button" tabIndex="0"> ÷ </button>
+      <button onClick={() => { setOp('÷'); }} data-testid="btnDivi" type="button" tabIndex="0"> ÷ </button>
       <button onClick={() => { setNum('1'); }} data-testid="btn1" type="button" tabIndex="0"> 1 </button>
       <button onClick={() => { setNum('2'); }} data-testid="btn2" type="button" tabIndex="0"> 2 </button>
       <button onClick={() => { setNum('3'); }} data-testid="btn3" type="button" tabIndex="0"> 3 </button>
@@ -24,7 +24,7 @@ function ButtonsGrid({
       <button onClick={() => { setNum('8'); }} data-testid="btn8" type="button" tabIndex="0"> 8 </button>
       <button onClick={() => { setNum('9'); }} data-testid="btn9" type="button" tabIndex="0"> 9 </button>
       <button onClick={() => { setOp('+'); }} data-testid="btnSum" type="button" tabIndex="0"> + </button>
-      <button onClick={() => { setNum('.'); }} type="button" tabIndex="0"> . </button>
+      <button onClick={() => { setNum('.'); }} data-testid="btnDot" type="button" tabIndex="0"> . </button>
       <button onClick={() => { setNum('0'); }} type="button" tabIndex="0"> 0 </button>
       <button onClick={resultt} data-testid="equals" type="button" tabIndex="0"> = </button>
       <button onClick={deleteNum} type="button" tabIndex="0"> DEL </button>
