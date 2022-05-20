@@ -5,9 +5,8 @@
 * @jest-enviroment jsdom
 */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
-import fireEvent from '@testing-library/user-event';
 import ButtonsGrid from '../components/ButtonsGrid';
 import Main from '../components/Main';
 import Shell from '../components/Shell';
@@ -17,15 +16,12 @@ describe('Testing if whole main app renders correctly', () => {
   it('Testing main app', () => {
     render(<Main />);
   });
-});
 
-describe('Testing if shell renders correctly', () => {
+
   it('Testing shell', () => {
     render(<Shell />);
   });
-});
 
-describe('Testing if component ButtonsGrid renders correctly', () => {
   it('Testing component ButtonsGrid', () => {
     render(
       <ButtonsGrid
@@ -41,31 +37,19 @@ describe('Testing if component ButtonsGrid renders correctly', () => {
     const testEl = screen.getByTestId('div-test-id');
     expect(testEl).toBeInTheDocument();
   });
-});
 
-describe('Testing operations', () => {
-  it('Testing sum', () => {
-    const funcionMock = jest.fn();
-    render(<Buttonn functionClick={funcionMock} />);
-    const btn1 = screen.getByTestId('pruebaBtn');
-    /* const btnSum = screen.getByTestId('btnSum');
-    const eq = screen.getByTestId('equals'); */
-    /** btn1.simulate('click');
-    btnSum.simulate('click');
-    btn1.simulate('click');
-    eq.simulate('click'); */
-    // expect(btn1).toBeDefined();
+  it('Testing Exist Button', () => {
+    render(<Main />);
+    const btn1 = screen.getByTestId('btn1');
+    expect(btn1).toBeInTheDocument();
+    const screenDisplay = screen.getByTestId('screenDisp');
+    expect(screenDisplay).toBeInTheDocument();
+    const btnSum = screen.getByTestId('btnSum');
+    const eq = screen.getByTestId('equals');
     fireEvent.click(btn1);
-    expect(funcionMock).toHaveBeenCalled();
-    // const screenDisplay = screen.getByTestId('screenDisp');
-    // console.log(screenDisplay.innerHTML);
-    // console.log(screenDisplay.innerText);
-    // expect(screenDisplay.textContent).toEqual('1');
-    // console.log(screenD)
-    /** fireEvent.click(btnSum);
+    fireEvent.click(btnSum);
     fireEvent.click(btn1);
     fireEvent.click(eq);
-    console.log(screenDisplay);
-    expect(screenDisplay.innerHtml).toHaveTextContent('2'); */
+    expect(screenDisplay.textContent).toBe('2');
   });
 });
