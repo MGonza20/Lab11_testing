@@ -162,7 +162,7 @@ describe('Testing if whole main app renders correctly', () => {
     expect(screenDisplay.textContent).toBe('2');
   });
 
-  it('Testing Division Operation does not show more than 9 characters when continuos result -> 22/7', () => {
+  it('Testing if Division Operation does not show more than 9 characters when continuos result -> 22/7', () => {
     render(<Main />);
     const btn2 = screen.getByTestId('btn2');
     expect(btn2).toBeInTheDocument();
@@ -202,5 +202,60 @@ describe('Testing if whole main app renders correctly', () => {
     fireEvent.click(btn7);
     fireEvent.click(eq);
     expect(screenDisplay.textContent).toBe('2.8571428');
+  });
+
+  it('Test to convert number to negative and cancel negative error rule', () => {
+    render(<Main />);
+    const btn2 = screen.getByTestId('btn2');
+    expect(btn2).toBeInTheDocument();
+    const btn1 = screen.getByTestId('btn1');
+    expect(btn1).toBeInTheDocument();
+    const btn7 = screen.getByTestId('btn7');
+    expect(btn7).toBeInTheDocument();
+    const changeToNeg = screen.getByTestId('btnChangeNum');
+    expect(changeToNeg).toBeInTheDocument();
+    const btnSum = screen.getByTestId('btnSum');
+    expect(btnSum).toBeInTheDocument();
+    const screenDisplay = screen.getByTestId('screenDisp');
+    expect(screenDisplay).toBeInTheDocument();
+    const eq = screen.getByTestId('equals');
+    fireEvent.click(btn1);
+    fireEvent.click(btn2);
+    fireEvent.click(changeToNeg);
+    fireEvent.click(btnSum);
+    fireEvent.click(btn7);
+    fireEvent.click(eq);
+    expect(screenDisplay.textContent).toBe('-5');
+  });
+
+  it('Test delete button', () => {
+    render(<Main />);
+    const btn2 = screen.getByTestId('btn2');
+    expect(btn2).toBeInTheDocument();
+    const btn1 = screen.getByTestId('btn1');
+    expect(btn1).toBeInTheDocument();
+    const btn7 = screen.getByTestId('btn7');
+    expect(btn7).toBeInTheDocument();
+    const btnSum = screen.getByTestId('btnSum');
+    expect(btnSum).toBeInTheDocument();
+    const deleteBtn = screen.getByTestId('btnDel');
+    expect(deleteBtn).toBeInTheDocument();
+    const screenDisplay = screen.getByTestId('screenDisp');
+    expect(screenDisplay).toBeInTheDocument();
+    const eq = screen.getByTestId('equals');
+    fireEvent.click(btn1);
+    fireEvent.click(btn2);
+    fireEvent.click(btn1);
+    fireEvent.click(btn2);
+    fireEvent.click(btn1);
+    fireEvent.click(btn2);
+    fireEvent.click(deleteBtn);
+    fireEvent.click(deleteBtn);
+    fireEvent.click(deleteBtn);
+    fireEvent.click(deleteBtn);
+    fireEvent.click(btnSum);
+    fireEvent.click(btn7);
+    fireEvent.click(eq);
+    expect(screenDisplay.textContent).toBe('19');
   });
 });

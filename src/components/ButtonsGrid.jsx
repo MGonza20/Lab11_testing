@@ -29,7 +29,7 @@ function divsGrid({
       <div onClick={() => { setNum('.'); }} data-testid="btnDot" type="div"> . </div>
       <div onClick={() => { setNum('0'); }} type="div"> 0 </div>
       <div onClick={resultt} data-testid="equals" type="div"> = </div>
-      <div onClick={deleteNum} type="div"> DEL </div>
+      <div onClick={deleteNum} data-testid="btnDel" type="div"> DEL </div>
     </div>
   );
 }
