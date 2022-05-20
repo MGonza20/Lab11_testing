@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import './display.css';
 import PropTypes from 'prop-types';

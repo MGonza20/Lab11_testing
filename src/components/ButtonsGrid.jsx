@@ -10,19 +10,19 @@ function ButtonsGrid({
     <div className="btnsDiv">
       <button type="button" onClick={clear} data-testid="div-test-id" tabIndex="0"> AC </button>
       <button type="button" onClick={setPMstate} tabIndex="0"> +/- </button>
-      <button onClick={() => { setOp('%'); }} type="button" tabIndex="0"> % </button>
+      <button onClick={() => { setOp('%'); }} data-testid="btnMod" type="button" tabIndex="0"> % </button>
       <button onClick={() => { setOp('÷'); }} type="button" tabIndex="0"> ÷ </button>
       <button onClick={() => { setNum('1'); }} data-testid="btn1" type="button" tabIndex="0"> 1 </button>
-      <button onClick={() => { setNum('2'); }} type="button" tabIndex="0"> 2 </button>
-      <button onClick={() => { setNum('3'); }} type="button" tabIndex="0"> 3 </button>
-      <button onClick={() => { setOp('x'); }} type="button" tabIndex="0"> x </button>
-      <button onClick={() => { setNum('4'); }} type="button" tabIndex="0"> 4 </button>
-      <button onClick={() => { setNum('5'); }} type="button" tabIndex="0"> 5 </button>
-      <button onClick={() => { setNum('6'); }} type="button" tabIndex="0"> 6 </button>
-      <button onClick={() => { setOp('-'); }} type="button" tabIndex="0"> - </button>
-      <button onClick={() => { setNum('7'); }} type="button" tabIndex="0"> 7 </button>
-      <button onClick={() => { setNum('8'); }} type="button" tabIndex="0"> 8 </button>
-      <button onClick={() => { setNum('9'); }} type="button" tabIndex="0"> 9 </button>
+      <button onClick={() => { setNum('2'); }} data-testid="btn2" type="button" tabIndex="0"> 2 </button>
+      <button onClick={() => { setNum('3'); }} data-testid="btn3" type="button" tabIndex="0"> 3 </button>
+      <button onClick={() => { setOp('x'); }} data-testid="btnMult" type="button" tabIndex="0"> x </button>
+      <button onClick={() => { setNum('4'); }} data-testid="btn4" type="button" tabIndex="0"> 4 </button>
+      <button onClick={() => { setNum('5'); }} data-testid="btn5" type="button" tabIndex="0"> 5 </button>
+      <button onClick={() => { setNum('6'); }} data-testid="btn6" type="button" tabIndex="0"> 6 </button>
+      <button onClick={() => { setOp('-'); }} data-testid="btnRest" type="button" tabIndex="0"> - </button>
+      <button onClick={() => { setNum('7'); }} data-testid="btn7" type="button" tabIndex="0"> 7 </button>
+      <button onClick={() => { setNum('8'); }} data-testid="btn8" type="button" tabIndex="0"> 8 </button>
+      <button onClick={() => { setNum('9'); }} data-testid="btn9" type="button" tabIndex="0"> 9 </button>
       <button onClick={() => { setOp('+'); }} data-testid="btnSum" type="button" tabIndex="0"> + </button>
       <button onClick={() => { setNum('.'); }} type="button" tabIndex="0"> . </button>
       <button onClick={() => { setNum('0'); }} type="button" tabIndex="0"> 0 </button>
@@ -31,8 +31,6 @@ function ButtonsGrid({
     </div>
   );
 }
-
-// crear un componente que tenga render de boton y reciba de parametros una función, parecido a resultt
 
 export default ButtonsGrid;
 
