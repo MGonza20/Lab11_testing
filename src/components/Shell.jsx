@@ -63,8 +63,6 @@ function Shell() {
       setBandera(true);
     }
     setOperator(inputOp);
-    console.log(inputOp);
-    console.log('operador actualizado');
   };
 
   const ac = () => {
